@@ -1,0 +1,32 @@
+<div class='card' *ngIf='product'>
+  <div class='card-header'>
+    Product Detail: {{product.productName}}
+  </div>
+  <div class='product-details'>
+    <ul>
+      <li>Description:</li>
+      <li>Product Code:</li>
+      <li>Release Date:</li>
+      <li>Price:</li>
+      <li>Star Rating:</li>
+    </ul>
+    <ul>
+        <li>{{product.description}}</li>
+        <li>{{product.productCode}}</li>
+        <li>{{product.releaseDate}}</li>
+        <li>{{product.price}}</li>
+        <li>
+          <pm-star
+            [rating]='product.starRating'></pm-star>
+        </li>
+      </ul>
+      <img src={{product.imageUrl}} />
+  </div>
+  <div class='card-footer'>
+    <button class='btn btn-outline-secondary'
+            style='width: 80px;'
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+  </div>
+</div>
